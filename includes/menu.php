@@ -1,37 +1,30 @@
 <div class="sidebar-menu">
-    <ul class="menu">
-        <li class="sidebar-title">Atendimento</li>
-        
-        <li class="sidebar-item active ">
-            <a href="index.html" class='sidebar-link'>
+    <ul class="menu">      
+        <li class="sidebar-item <?php if (MENU == 'lista') { echo 'active'; } ?>">
+            <a href="./lista.php" class='sidebar-link'>
                 <i class="bi bi-grid-fill"></i>
-                <span>Dashboard</span>
+                <span>Lista</span>
             </a>
         </li> 
 
-        <li class="sidebar-item">
-            <a href="index.html" class='sidebar-link'>
-                <i class="bi bi-person-dash-fill"></i>
-                <span>Pacientes</span>
-            </a>
-        </li> 
-
-        <li class="sidebar-title">Administrativo</li>
-
-        <li class="sidebar-item">
-            <a href="index.html" class='sidebar-link'>
+        <li class="sidebar-item <?php if (MENU == 'credenciais') { echo 'active'; } ?>">
+            <a href="./credenciais.php" class='sidebar-link'>
                 <i class="bi bi-people-fill"></i>
-                <span>Colaboradores</span>
+                <span>Credenciais de pacientes</span>
             </a>
         </li> 
-        
-        <li class="sidebar-item">
-            <a href="index.html" class='sidebar-link'>
-                <i class="bi bi-cash"></i>
-                <span>Financeiro</span>
-            </a>
-        </li>
 
-        <li class="sidebar-title">Sistema</li>
+        <li class="sidebar-item <?php if (MENU == 'configuracoes') { echo 'active'; } ?>">
+            <a href="./configuracoes.php" class='sidebar-link'>
+                <i class="bi bi-xorg"></i>
+                <span>Configurações</span>
+            </a>
+        </li> 
+
+        <li class="sidebar-item">
+            <a href="./actions/sair.php" class='sidebar-link'>
+                <span>Sair</span>
+            </a>
+        </li> 
     </ul>
 </div>
