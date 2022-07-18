@@ -6,7 +6,7 @@ require 'actions/environment.php';
 
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, URL . '/v1/configs/');
+curl_setopt($ch, CURLOPT_URL, URL . '/v1/configs');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 $headers = array();
