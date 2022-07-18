@@ -61,9 +61,9 @@ curl_close($ch);
                                                         <tr>
                                                             <td><?php echo $value->protocolo; ?></td>
                                                             <td><?php echo $value->data_solicitacao; ?></td>
-                                                            <td><?php echo $value->valor_solicitacao; ?></td>
+                                                            <td><?php echo $value->valor_solicitado; ?></td>
                                                             <td><?php echo $value->tipo_atendimento; ?></td>
-                                                            <td><?php echo $value->valor_reembolso; ?></td>
+                                                            <td><?php echo $value->valor_reembolsado; ?></td>
                                                             <td><?php echo $value->status_solicitacao; ?></td>
                                                             <td><?php echo $value->cpf; ?></td>
                                                             <td><?php echo $value->updated_at; ?></td>
