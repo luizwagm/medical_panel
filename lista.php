@@ -66,7 +66,7 @@ curl_close($ch);
                                                             <td><?php echo $value->valor_reembolsado; ?></td>
                                                             <td><?php echo $value->status_solicitacao; ?></td>
                                                             <td><?php echo $value->cpf; ?></td>
-                                                            <td><?php echo $value->updated_at; ?></td>
+                                                            <td><?php echo date('d/m/Y H-i', strtotime($value->updated_at)); ?></td>
                                                         </tr>
                                                     <?php } ?>
                                                 </tbody>
