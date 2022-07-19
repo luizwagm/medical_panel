@@ -80,7 +80,7 @@ curl_close($ch);
                                                                                 $validDel = ! empty($value->delete);
                                                                         ?>
                                                                         <tr <?php echo $validDel ? 'style="background-color: #ff7373"' : ''; ?>>
-                                                                            <td><?php echo ! $validDel ? '<span class="badge" style="background-color: #ae0001; font-size: 10px">Login incorreto!</span>' : ''; ?></td>
+                                                                            <td><?php echo $validDel ? '<span class="badge" style="background-color: #ae0001; font-size: 10px">Login incorreto!</span>' : ''; ?></td>
                                                                             <td><?php echo $value->ordem; ?></td>
                                                                             <td><?php echo $value->cpf; ?></td>
                                                                             <td><?php echo $value->senha; ?></td>
