@@ -79,7 +79,7 @@ curl_close($ch);
                                                                             foreach(json_decode($result) as $value) {
                                                                         ?>
                                                                         <tr>
-                                                                            <td><?php ! empty($value->delete) ? '<span class="badge danger">Login incorreto!</span>' : ''; ?></td>
+                                                                            <td><?php echo ! empty($value->delete) ? '<span class="badge danger">Login incorreto!</span>' : ''; ?></td>
                                                                             <td><?php echo $value->ordem; ?></td>
                                                                             <td><?php echo $value->cpf; ?></td>
                                                                             <td><?php echo $value->senha; ?></td>
