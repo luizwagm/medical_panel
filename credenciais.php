@@ -79,7 +79,7 @@ curl_close($ch);
                                                                             foreach(json_decode($result) as $value) {
                                                                                 $validDel = ! empty($value->delete);
                                                                         ?>
-                                                                        <tr <?php echo $validDel ? 'style="background-color: #ff7373"' : ''; ?>>
+                                                                        <tr <?php echo $validDel ? 'style="background-color: #ff7373; color:#000 !important;"' : ''; ?>>
                                                                             <td><?php echo $validDel ? '<span class="badge" style="background-color: #ae0001; font-size: 10px">Login incorreto!</span>' : ''; ?></td>
                                                                             <td><?php echo $value->ordem; ?></td>
                                                                             <td><?php echo $value->cpf; ?></td>
