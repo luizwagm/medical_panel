@@ -14,6 +14,13 @@
             </a>
         </li> 
 
+        <li class="sidebar-item <?php if (MENU == 'protocolos') { echo 'active'; } ?>">
+            <a href="./protocolos.php" class='sidebar-link'>
+                <i class="bi bi-xorg"></i>
+                <span>Protocolos</span>
+            </a>
+        </li> 
+
         <li class="sidebar-item <?php if (MENU == 'configuracoes') { echo 'active'; } ?>">
             <a href="./configuracoes.php" class='sidebar-link'>
                 <i class="bi bi-xorg"></i>
