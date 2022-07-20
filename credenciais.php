@@ -23,9 +23,9 @@ $errosCredenciais = 0;
 foreach(json_decode($result) as $key => $value) {
     if (! empty($value->delete)) {
         $errosCredenciais++;
-    } else {
-        $cadastrosCredenciais++;
     }
+    
+    $cadastrosCredenciais++;
 }
 
 ?>
