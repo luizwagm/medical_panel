@@ -80,7 +80,7 @@ curl_close($ch);
                                                                                 $validDel = ! empty($value->delete);
                                                                         ?>
                                                                         <tr <?php echo $validDel ? 'style="background-color: #FCC0C0; color:#000 !important; transparent: 0.5"' : ''; ?>>
-                                                                            <td><?php echo $key; ?> - <?php echo $validDel ? '<span class="badge" style="background-color: #ae0001; font-size: 10px">Não conecta no sistema!</span>' : ''; ?></td>
+                                                                            <td><?php echo $key + 1; ?> - <?php echo $validDel ? '<span class="badge" style="background-color: #ae0001; font-size: 10px">Não conecta no sistema!</span>' : ''; ?></td>
                                                                             <td><?php echo $value->ordem; ?></td>
                                                                             <td><?php echo $value->cpf; ?></td>
                                                                             <td><?php echo $value->senha; ?></td>
