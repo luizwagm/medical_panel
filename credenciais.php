@@ -52,7 +52,7 @@ foreach(json_decode($result) as $key => $value) {
                                             <div class="col-md-12">
                                                 <form action="./actions/storeCredentials.php" method="post">
                                                     <div class="form-group">
-                                                        <label for="basicInput">CPF</label>
+                                                        <label for="basicInput">CPF/E-mail</label>
                                                         <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Insira o CPF">
                                                     </div>
                                                     <div class="form-group">
@@ -120,7 +120,7 @@ foreach(json_decode($result) as $key => $value) {
                                                                         <tr>
                                                                             <th></th>
                                                                             <th>Ordem</th>
-                                                                            <th>CPF</th>
+                                                                            <th>CPF/E-mail</th>
                                                                             <th>Senha</th>
                                                                             <th>Nome do paciente</th>
                                                                             <th></th>
