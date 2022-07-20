@@ -118,7 +118,7 @@ foreach(json_decode($result) as $key => $value) {
                                                                 <table class="table mb-0" style="overflow: auto; height: 500px; display: block; width: 100%;">
                                                                     <thead class="thead-dark">
                                                                         <tr>
-                                                                            <th><a href="./actions/importar.php" class="btn btn-info">Importar</a></th>
+                                                                            <th></th>
                                                                             <th>Ordem</th>
                                                                             <th>CPF</th>
                                                                             <th>Senha</th>
