@@ -57,14 +57,15 @@ curl_close($ch);
                                                 <tbody>
                                                     <?php
                                                         foreach(json_decode($result) as $value) {
+                                                            $roleValid = (strtotime($value->updated_at) > strtotime($value->created_at));
                                                     ?>
-                                                        <tr <?php if (strtotime($value->updated_at) > strtotime($value->created_at)) { echo 'style="background-color: #E0FFCA; color: #000"'; } ?>>
+                                                        <tr <?php if ($roleValid) { echo 'style="background-color: #E0FFCA; color: #000"'; } ?>>
                                                             <td><?php echo $value->protocolo; ?></td>
                                                             <td><?php echo $value->data_solicitacao; ?></td>
                                                             <td><?php echo $value->valor_solicitado; ?></td>
                                                             <td><?php echo $value->tipo_atendimento; ?></td>
                                                             <td><?php echo $value->valor_reembolsado; ?></td>
-                                                            <td><?php echo $value->status_solicitacao; ?></td>
+                                                            <td <?php if ($roleValid) { echo "style='color: #428F0B; font-weight:bold'"; } ?>><?php echo $value->status_solicitacao; ?></td>
                                                             <td><?php echo $value->cpf; ?></td>
                                                             <td><?php echo date('d/m/Y H:i', strtotime($value->updated_at)); ?></td>
                                                         </tr>
