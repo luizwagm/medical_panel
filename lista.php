@@ -41,7 +41,7 @@ curl_close($ch);
                                 <div class="card">
                                     <div class="card-content">
                                         <div class="table-responsive">
-                                            <table class="table mb-0">
+                                            <table class="table mb-0" style="overflow: auto; height: 500px; display: block; width: 100%;">
                                                 <thead class="thead-dark">
                                                     <tr>
                                                         <th>Protocolo</th>
