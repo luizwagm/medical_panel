@@ -40,17 +40,18 @@ curl_close($ch);
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-content">
-                                        <div class="table-responsive">
-                                            <table class="table mb-0" style="overflow: auto; height: 500px; display: block; width: 100%;">
+                                        <div class="table-responsive" style="overflow: auto; height: 500px;">
+                                            <table class="table mb-0">
                                                 <thead class="thead-dark">
                                                     <tr>
+                                                        <th>Paciente</th>
+                                                        <th>CPF/E-mail</th>
                                                         <th>Protocolo</th>
                                                         <th>Data de solicitação</th>
                                                         <th>Valor Solicitado</th>
                                                         <th>Tipo de Atendimento</th>
                                                         <th>Valor do Reembolso</th>
                                                         <th>Status da Solicitação</th>
-                                                        <th>CPF da conta</th>
                                                         <th>Última atualização</th>
                                                     </tr>
                                                 </thead>
@@ -60,13 +61,14 @@ curl_close($ch);
                                                             $roleValid = (strtotime($value->updated_at) > strtotime($value->created_at));
                                                     ?>
                                                         <tr <?php if ($roleValid) { echo 'style="background-color: #E0FFCA; color: #000"'; } ?>>
+                                                            <td><?php echo $value->nome; ?></td>
+                                                            <td><?php echo $value->cpf; ?></td>
                                                             <td><?php echo $value->protocolo; ?></td>
                                                             <td><?php echo $value->data_solicitacao; ?></td>
                                                             <td><?php echo $value->valor_solicitado; ?></td>
                                                             <td><?php echo $value->tipo_atendimento; ?></td>
                                                             <td><?php echo $value->valor_reembolsado; ?></td>
                                                             <td <?php if ($roleValid) { echo "style='color: #428F0B; font-weight:bold'"; } ?>><?php echo $value->status_solicitacao; ?></td>
-                                                            <td><?php echo $value->cpf; ?></td>
                                                             <td><?php echo date('d/m/Y H:i', strtotime($value->updated_at)); ?></td>
                                                         </tr>
                                                     <?php } ?>
