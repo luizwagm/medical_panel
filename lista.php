@@ -60,7 +60,7 @@ curl_close($ch);
                                                         foreach(json_decode($result) as $value) {
                                                             $roleValid = (strtotime($value->updated_at) > strtotime($value->created_at));
                                                     ?>
-                                                        <tr <?php if ($roleValid) { echo 'style="background-color: #E0FFCA; color: #000"'; } ?>>
+                                                        <tr>
                                                             <td><?php echo $value->nome; ?></td>
                                                             <td><?php echo $value->cpf; ?></td>
                                                             <td><?php echo $value->protocolo; ?></td>
