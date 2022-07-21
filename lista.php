@@ -32,7 +32,7 @@ curl_close($ch);
                 </header>
                 
                 <div class="page-heading">
-                    <h3>Lista atualizada</h3>
+                    <h3>Lista solicitações de reembolso</h3>
                 </div>
                 <div class="page-content">
                     <section class="section">
@@ -50,7 +50,6 @@ curl_close($ch);
                                                         <th>Data de solicitação</th>
                                                         <th>Valor Solicitado</th>
                                                         <th>Tipo de Atendimento</th>
-                                                        <th>Valor do Reembolso</th>
                                                         <th>Status da Solicitação</th>
                                                         <th>Última atualização</th>
                                                     </tr>
@@ -67,7 +66,6 @@ curl_close($ch);
                                                             <td><?php echo $value->data_solicitacao; ?></td>
                                                             <td><?php echo $value->valor_solicitado; ?></td>
                                                             <td><?php echo $value->tipo_atendimento; ?></td>
-                                                            <td><?php echo $value->valor_reembolsado; ?></td>
                                                             <td <?php if ($roleValid) { echo "style='color: #428F0B; font-weight:bold'"; } ?>><?php echo $value->status_solicitacao; ?></td>
                                                             <td><?php echo date('d/m/Y H:i', strtotime($value->updated_at)); ?></td>
                                                         </tr>
