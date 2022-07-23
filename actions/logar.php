@@ -13,8 +13,8 @@ if (! password_verify(STRING_SECRET.date('Y-m-d'), $token)) {
     exit;
 }
 
-$email = $_POST['email'];
-$senha = $_POST['senha'];
+$email = trim($_POST['email']);
+$senha = trim($_POST['senha']);
 
 $params = [
     'email' => $email,
@@ -40,5 +40,9 @@ if (curl_errno($ch)) {
 curl_close($ch);
 
 $_SESSION['token'] = json_decode($result)->access_token;
-echo '<script>alert("Sucesso!");</script>';
+if (json_decode($result)->access_token) {
+    echo '<script>alert("Sucesso!");</script>';
+} else {
+    echo '<script>alert("Acessao não permitido, tente novamente.");</script>';
+}
 echo '<script>location.href="../index.php"</script>';

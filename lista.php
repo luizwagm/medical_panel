@@ -41,7 +41,7 @@ curl_close($ch);
                                 <div class="card">
                                     <div class="card-content">
                                         <div class="table-responsive" style="overflow: auto; height: 500px;">
-                                            <table class="table mb-0">
+                                            <table class="table mb-0" style="font-size: 13px; text-transform: uppercase;">
                                                 <thead class="thead-dark">
                                                     <tr>
                                                         <th>Paciente</th>

@@ -114,12 +114,11 @@ foreach(json_decode($result) as $key => $value) {
                                                 <div class="col-12">
                                                     <div class="card">
                                                         <div class="card-content">
-                                                            <div class="table-responsive">
-                                                                <table class="table mb-0" style="overflow: auto; height: 500px; display: block; width: 100%;">
+                                                            <div class="table-responsive" style="overflow: auto; height: 500px;">
+                                                                <table class="table mb-0" style="font-size: 13px; text-transform: uppercase;">
                                                                     <thead class="thead-dark">
                                                                         <tr>
                                                                             <th></th>
-                                                                            <th>Ordem</th>
                                                                             <th>CPF/E-mail</th>
                                                                             <th>Senha</th>
                                                                             <th>Nome do paciente</th>
@@ -132,8 +131,7 @@ foreach(json_decode($result) as $key => $value) {
                                                                                 $validDel = ! empty($value->delete);
                                                                         ?>
                                                                         <tr <?php echo $validDel ? 'style="background-color: #FCC0C0; color:#000 !important; transparent: 0.5"' : ''; ?>>
-                                                                            <td><?php echo $key + 1; ?> - <?php echo $validDel ? '<span class="badge" style="background-color: #ae0001; font-size: 10px">Não conecta no sistema!</span>' : ''; ?></td>
-                                                                            <td><?php echo $value->ordem; ?></td>
+                                                                            <td><?php echo $validDel ? '<span class="badge" style="background-color: #ae0001; font-size: 10px">Não conecta no sistema!</span>' : ''; ?></td>
                                                                             <td><?php echo $value->cpf; ?></td>
                                                                             <td><?php echo $value->senha; ?></td>
                                                                             <td><?php echo $value->nome; ?></td>

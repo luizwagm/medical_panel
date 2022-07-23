@@ -9,26 +9,28 @@ if (! isset($_SESSION['token']) || empty($_SESSION['token'])) {
 
 require 'environment.php';
 
-$email = $_POST['email'];
-$senha = $_POST['senha'];
+$senha = trim($_POST['senha']);
 
-$params = ['email' => $email, 'password' => $senha];
+if (! empty($senha)) {
+    $params = ['password' => $senha];
 
-$ch = curl_init();
+    $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, URL . '/v1/configs/store');
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
+    curl_setopt($ch, CURLOPT_URL, URL . '/v1/configs/store');
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
 
-$headers = array();
-$headers[] = 'Accept: application/json';
-$headers[] = 'Authorization: Bearer ' . $_SESSION['token'];
-$headers[] = 'Content-Type: application/json';
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    $headers = array();
+    $headers[] = 'Accept: application/json';
+    $headers[] = 'Authorization: Bearer ' . $_SESSION['token'];
+    $headers[] = 'Content-Type: application/json';
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-$result = curl_exec($ch);
-curl_close($ch);
+    $result = curl_exec($ch);
+    curl_close($ch);
 
-echo '<script>alert("Sucesso!");</script>';
+    echo '<script>alert("Sucesso!");</script>';
+}
+
 echo '<script>location.href="../configuracoes.php"</script>';

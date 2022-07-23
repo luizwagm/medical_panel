@@ -40,11 +40,12 @@ curl_close($ch);
                                         <form action="./actions/storeConfigs.php" method="post">
                                             <div class="form-group">
                                                 <label for="basicInput">E-mail</label>
-                                                <input type="text" class="form-control" id="email" name="email" value="<?php echo json_decode($result)->email; ?>" placeholder="Insira o CPF">
+                                                <input type="text" class="form-control" id="email" name="email" readonly value="<?php echo json_decode($result)->email; ?>" placeholder="Insira o CPF">
                                             </div>
                                             <div class="form-group">
                                                 <label for="basicInput">Senha</label>
-                                                <input type="password" class="form-control" id="senha" name="senha" value="<?php echo json_decode($result)->password; ?>" placeholder="Insira a senha">
+                                                <input type="password" class="form-control" id="senha" name="senha" placeholder="Insira a senha">
+                                                <small>Se não desejar alterar, só n inserir acima.</small>
                                             </div>
                                             <div class="form-group">
                                                 <button class="btn btn-primary">Salvar</button>
