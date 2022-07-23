@@ -40,9 +40,7 @@ if (curl_errno($ch)) {
 curl_close($ch);
 
 $_SESSION['token'] = json_decode($result)->access_token;
-if (json_decode($result)->access_token) {
-    echo '<script>alert("Sucesso!");</script>';
-} else {
+if (! json_decode($result)->access_token) {
     echo '<script>alert("Acessao não permitido, tente novamente.");</script>';
 }
 echo '<script>location.href="../index.php"</script>';
