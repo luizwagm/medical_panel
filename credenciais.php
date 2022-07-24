@@ -62,6 +62,8 @@ foreach(json_decode($result) as $key => $value) {
                                                     <div class="form-group">
                                                         <label for="basicInput">Nome do paciente</label>
                                                         <input type="text" class="form-control" id="nome_paciente" name="nome_paciente" placeholder="Insira o nome do paciente">
+                                                        <small><strong>ATENÇÃO: insira o nome igual se encontra no cartão Bradesco Seguros!</strong></small>
+                                                        <small><strong>Se existir acento colocar, se não, não colocar.</strong></small>
                                                     </div>
                                                     <div class="form-group">
                                                         <button class="btn btn-primary">Salvar</button>
