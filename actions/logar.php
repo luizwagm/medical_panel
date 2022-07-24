@@ -41,6 +41,7 @@ curl_close($ch);
 
 $_SESSION['token'] = json_decode($result)->access_token;
 if (! json_decode($result)->access_token) {
+    print_r($result);
     echo '<script>alert("Acessao não permitido, tente novamente.");</script>';
 }
 echo '<script>location.href="../index.php"</script>';
