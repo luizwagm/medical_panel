@@ -51,7 +51,6 @@ curl_close($ch);
                                                         <th>Valor Solicitado</th>
                                                         <th>Tipo de Atendimento</th>
                                                         <th>Status da Solicitação</th>
-                                                        <th>Última atualização</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -67,7 +66,6 @@ curl_close($ch);
                                                             <td><?php echo $value->valor_solicitado; ?></td>
                                                             <td><?php echo $value->tipo_atendimento; ?></td>
                                                             <td <?php if ($roleValid) { echo "style='color: #428F0B; font-weight:bold'"; } ?>><?php echo $value->status_solicitacao; ?></td>
-                                                            <td><?php echo date('d/m/Y H:i', strtotime($value->updated_at)); ?></td>
                                                         </tr>
                                                     <?php } ?>
                                                 </tbody>
