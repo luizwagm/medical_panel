@@ -44,8 +44,7 @@ curl_close($ch);
                                             </div>
                                             <div class="form-group">
                                                 <label for="basicInput">Senha</label>
-                                                <input type="password" class="form-control" id="senha" name="senha" placeholder="Insira a senha">
-                                                <small>Se não desejar alterar, só n inserir acima.</small>
+                                                <input type="password" class="form-control" id="senha" name="senha" placeholder="Insira a senha caso deseje alterar">
                                             </div>
                                             <div class="form-group">
                                                 <button class="btn btn-primary">Salvar</button>
