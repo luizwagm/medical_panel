@@ -41,7 +41,8 @@ curl_close($ch);
 
 $_SESSION['token'] = json_decode($result)->access_token;
 if (! json_decode($result)->access_token) {
-    print_r($result);
-    echo '<script>alert("Acessao não permitido, tente novamente.");</script>';
+    print_r(json_decode($result)->error);
+    echo '<br><br>Tente novamente, <a href="../login.php">clicando aqui.</a>';
+} else {
+    echo '<script>location.href="../index.php"</script>';
 }
-echo '<script>location.href="../index.php"</script>';
