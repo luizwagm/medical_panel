@@ -1,5 +1,18 @@
 <?php define('MENU', 'lista'); ?>
 <?php require "includes/header.php"; ?>
+<style>
+    @media print {
+        * {
+            visibility: hidden;
+        }
+        .noPrint {
+            display: none;
+        }
+        .print {
+            visibility: visible;
+        }
+    }
+</style>
 
 <?php
 
@@ -33,6 +46,7 @@ curl_close($ch);
                 
                 <div class="page-heading">
                     <h3>Lista solicitações de reembolso</h3>
+                    <button class="btn btn-primary" onclick="print();">Imprimir</button>
                 </div>
                 <div class="page-content">
                     <section class="section">
@@ -41,7 +55,7 @@ curl_close($ch);
                                 <div class="card">
                                     <div class="card-content">
                                         <div class="table-responsive" style="overflow: auto; height: 500px;">
-                                            <table class="table mb-0" style="font-size: 13px; text-transform: uppercase;">
+                                            <table class="table mb-0 print" style="font-size: 13px; text-transform: uppercase;">
                                                 <thead class="thead-dark">
                                                     <tr>
                                                         <th>Paciente</th>
