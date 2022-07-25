@@ -1,7 +1,6 @@
 <?php define('MENU', 'lista'); ?>
 <?php require "includes/header.php"; ?>
 <style>
-    
     @media print {
         .noPrint {
             display: none;
@@ -9,11 +8,13 @@
         .print {
             position:absolute !important;
             height: auto !important;
-            left: -300px !important;
-            font-size:11px !important;
+            left: -50% !important;
+        }
+        .print table th, .print table td {
+            font-size:10px !important;
         }
         @page {
-            size: A4 landscape
+            size:landscape;
         }
     }
 
