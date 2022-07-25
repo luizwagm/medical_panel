@@ -28,6 +28,10 @@ foreach(json_decode($result) as $key => $value) {
     $cadastrosCredenciais++;
 }
 
+if (isset($_GET['val'])) {
+    $resUpd = json_decode(base64_decode($_GET['val']));
+}
+
 ?>
     <body>
         <div id="app">
@@ -51,19 +55,25 @@ foreach(json_decode($result) as $key => $value) {
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <form action="./actions/storeCredentials.php" method="post">
+                                                    <input type="hidden" name="acao" value="<?php echo $_GET['acao'] == 'upd' ? 'atualizar' : 'cadastrar'; ?>">
+                                                    <input type="hidden" name="id" value="<?php if ($resUpd) { echo $resUpd->id; }?>">
                                                     <div class="form-group">
-                                                        <label for="basicInput">CPF/E-mail</label>
-                                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Insira o CPF">
+                                                        <label for="basicInput">CPF/E-mail *</label>
+                                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Insira o CPF" value="<?php if ($resUpd) { echo $resUpd->cpf; }?>">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="basicInput">Senha</label>
-                                                        <input type="text" class="form-control" id="senha" name="senha" placeholder="Insira a senha">
+                                                        <label for="basicInput">Senha *</label>
+                                                        <input type="text" class="form-control" id="senha" name="senha" placeholder="Insira a senha" value="<?php if ($resUpd) { echo $resUpd->senha; }?>">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="basicInput">Nome do paciente</label>
-                                                        <input type="text" class="form-control" id="nome_paciente" name="nome_paciente" placeholder="Insira o nome do paciente">
+                                                        <label for="basicInput">Nome do paciente *</label>
+                                                        <input type="text" class="form-control" id="nome_paciente" name="nome_paciente" placeholder="Insira o nome do paciente" value="<?php if ($resUpd) { echo $resUpd->nome; }?>">
                                                         <small><strong>ATENÇÃO: insira o nome igual se encontra no cartão Bradesco Seguros!</strong></small>
                                                         <small><strong>Se existir acento colocar, se não, não colocar.</strong></small>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="basicInput">Número do cartão *</label>
+                                                        <input type="text" class="form-control" id="numero_cartao" name="numero_cartao" placeholder="Insira o número do cartão" value="<?php if ($resUpd) { echo $resUpd->numero_cartao; }?>">
                                                     </div>
                                                     <div class="form-group">
                                                         <button class="btn btn-primary">Salvar</button>
@@ -124,6 +134,7 @@ foreach(json_decode($result) as $key => $value) {
                                                                             <th>CPF/E-mail</th>
                                                                             <th>Senha</th>
                                                                             <th>Nome do paciente</th>
+                                                                            <th>Nº Cartão</th>
                                                                             <th></th>
                                                                         </tr>
                                                                     </thead>
@@ -131,13 +142,25 @@ foreach(json_decode($result) as $key => $value) {
                                                                         <?php
                                                                             foreach(json_decode($result) as $key => $value) {
                                                                                 $validDel = ! empty($value->delete);
+
+                                                                                $arr64 = [
+                                                                                    'cpf' =>$value->cpf,
+                                                                                    'senha' =>$value->senha,
+                                                                                    'nome' =>$value->nome,
+                                                                                    'numero_cartao' =>$value->numero_cartao,
+                                                                                    'id' =>$value->id,
+
+                                                                                ];
+
+                                                                                $string64 = base64_encode(json_encode($arr64));
                                                                         ?>
                                                                         <tr <?php echo $validDel ? 'style="background-color: #FCC0C0; color:#000 !important; transparent: 0.5"' : ''; ?>>
                                                                             <td><?php echo $validDel ? '<span class="badge" style="background-color: #ae0001; font-size: 10px">Não conecta no sistema!</span>' : ''; ?></td>
                                                                             <td><?php echo $value->cpf; ?></td>
                                                                             <td><?php echo $value->senha; ?></td>
                                                                             <td><?php echo $value->nome; ?></td>
-                                                                            <td><a href="./actions/deletar.php?id=<?php echo $value->id; ?>" class="btn btn-danger">Remover</a></td>
+                                                                            <td><?php echo $value->numero_cartao; ?></td>
+                                                                            <td><a href="../credenciais.php?val=<?php echo $string64; ?>&acao=upd" class="btn btn-warning">Editar</a> <a href="./actions/deletar.php?id=<?php echo $value->id; ?>" class="btn btn-danger">Remover</a></td>
                                                                         </tr>
                                                                         <?php } ?>
                                                                     </tbody>
