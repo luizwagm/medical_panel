@@ -3,13 +3,13 @@
 <style>
     @media print {
         * {
-            visibility: hidden;
+            display: none;
         }
         .noPrint {
             display: none;
         }
         .print {
-            visibility: visible;
+            display: block !important;
         }
     }
 </style>
@@ -46,7 +46,7 @@ curl_close($ch);
                 
                 <div class="page-heading">
                     <h3>Lista solicitações de reembolso</h3>
-                    <button class="btn btn-primary" onclick="print();">Imprimir</button>
+                    <button type="button" class="btn btn-primary" onclick="print();">Imprimir</button>
                 </div>
                 <div class="page-content">
                     <section class="section">
