@@ -19,6 +19,7 @@ $acao = trim($_POST['acao']);
 
 if (empty($cpf) || empty($senha) || empty($nome) || empty($numeroCartao)) {
     echo '<script>alert("Todos os campos são obrigatórios!");</script>';
+    echo '<script>location.href="../credenciais.php"</script>';
 } else {
     $ch = curl_init();
 

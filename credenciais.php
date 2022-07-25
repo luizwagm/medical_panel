@@ -160,7 +160,7 @@ if (isset($_GET['val'])) {
                                                                             <td><?php echo $value->senha; ?></td>
                                                                             <td><?php echo $value->nome; ?></td>
                                                                             <td><?php echo $value->numero_cartao; ?></td>
-                                                                            <td><a href="../credenciais.php?val=<?php echo $string64; ?>&acao=upd" class="btn btn-warning">Editar</a> <a href="./actions/deletar.php?id=<?php echo $value->id; ?>" class="btn btn-danger">Remover</a></td>
+                                                                            <td><a href="./credenciais.php?val=<?php echo $string64; ?>&acao=upd" class="btn btn-warning">Editar</a> <a href="./actions/deletar.php?id=<?php echo $value->id; ?>" class="btn btn-danger">Remover</a></td>
                                                                         </tr>
                                                                         <?php } ?>
                                                                     </tbody>
