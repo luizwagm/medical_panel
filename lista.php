@@ -1,15 +1,22 @@
 <?php define('MENU', 'lista'); ?>
 <?php require "includes/header.php"; ?>
 <style>
+    
     @media print {
         .noPrint {
             display: none;
         }
         .print {
-            display: block !important;
-            height: auto;
+            position:absolute !important;
+            height: auto !important;
+            left: -300px !important;
+            font-size:11px !important;
+        }
+        @page {
+            size: A4 landscape
         }
     }
+
 </style>
 
 <?php
