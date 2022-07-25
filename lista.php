@@ -2,9 +2,6 @@
 <?php require "includes/header.php"; ?>
 <style>
     @media print {
-        * {
-            display: none;
-        }
         .noPrint {
             display: none;
         }
