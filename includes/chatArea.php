@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card noPrint">
     <div class="card-body py-4 px-5">
         <div class="d-flex align-items-center">
             <div class="avatar avatar-xl">
@@ -11,7 +11,7 @@
         </div>
     </div>
 </div>
-<div class="card">
+<div class="card noPrint">
     <div class="card-header">
         <h4>Conversas</h4>
     </div>

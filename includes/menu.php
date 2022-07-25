@@ -1,4 +1,4 @@
-<div class="sidebar-menu">
+<div class="sidebar-menu noPrint">
     <ul class="menu">      
         <li class="sidebar-item <?php if (MENU == 'lista') { echo 'active'; } ?>">
             <a href="./lista.php" class='sidebar-link'>

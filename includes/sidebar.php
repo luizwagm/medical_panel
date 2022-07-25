@@ -1,4 +1,4 @@
-<div id="sidebar" class="active">
+<div id="sidebar" class="active noPrint">
     <div class="sidebar-wrapper active">
         <div class="sidebar-header position-relative">
 

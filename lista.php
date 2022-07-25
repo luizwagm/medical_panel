@@ -7,6 +7,7 @@
         }
         .print {
             display: block !important;
+            height: auto;
         }
     }
 </style>
@@ -35,13 +36,13 @@ curl_close($ch);
         <div id="app">
             <?php require "includes/sidebar.php"; ?>
             <div id="main">
-                <header class="mb-3">
+                <header class="mb-3 noPrint">
                     <a href="#" class="burger-btn d-block d-xl-none">
                         <i class="bi bi-justify fs-3"></i>
                     </a>
                 </header>
                 
-                <div class="page-heading">
+                <div class="page-heading noPrint">
                     <h3>Lista solicitações de reembolso</h3>
                     <button type="button" class="btn btn-primary" onclick="print();">Imprimir</button>
                 </div>
@@ -51,8 +52,8 @@ curl_close($ch);
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-content">
-                                        <div class="table-responsive" style="overflow: auto; height: 500px;">
-                                            <table class="table mb-0 print" style="font-size: 13px; text-transform: uppercase;">
+                                        <div class="table-responsive print" style="overflow: auto; height: 500px;">
+                                            <table class="table mb-0" style="font-size: 13px; text-transform: uppercase;">
                                                 <thead class="thead-dark">
                                                     <tr>
                                                         <th>Paciente</th>
