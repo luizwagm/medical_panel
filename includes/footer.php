@@ -12,7 +12,14 @@
 <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script>
     $('document').ready( function () {
-        $('.tableDataJquery').DataTable({
+        $('.tableDataJqueryLista').DataTable({
+            "order": [[ 7, 'desc' ]],
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.12.1/i18n/pt-BR.json'
+            }
+        });
+
+        $('.tableDataJqueryOther').DataTable({
             language: {
                 url: 'https://cdn.datatables.net/plug-ins/1.12.1/i18n/pt-BR.json'
             }

@@ -61,7 +61,7 @@ curl_close($ch);
                                 <div class="card">
                                     <div class="card-content">
                                         <div class="table-responsive print" style="overflow: auto; height: 500px;">
-                                            <table class="table mb-0 tableDataJquery stripe" style="font-size: 13px; text-transform: uppercase;">
+                                            <table class="table mb-0 tableDataJqueryLista stripe" style="font-size: 13px; text-transform: uppercase;">
                                                 <thead class="thead-dark">
                                                     <tr>
                                                         <th>Paciente</th>

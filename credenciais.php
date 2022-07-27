@@ -127,7 +127,7 @@ if (isset($_GET['val'])) {
                                                     <div class="card">
                                                         <div class="card-content">
                                                             <div class="table-responsive" style="overflow: auto; height: 500px;">
-                                                                <table class="table mb-0 tableDataJquery stripe" style="font-size: 13px; text-transform: uppercase;">
+                                                                <table class="table mb-0 tableDataJqueryOther stripe" style="font-size: 13px; text-transform: uppercase;">
                                                                     <thead class="thead-dark">
                                                                         <tr>
                                                                             <th></th>
