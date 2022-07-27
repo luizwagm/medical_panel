@@ -17,4 +17,5 @@ if (! isset($_SESSION['token']) || empty($_SESSION['token'])) {
     <link rel="shortcut icon" href="./dist/assets/images/logo/favicon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="./dist/assets/images/logo/favicon.png" type="image/png">
     <link rel="stylesheet" href="./dist/assets/css/shared/iconly.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 </head>
