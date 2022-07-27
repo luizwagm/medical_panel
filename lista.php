@@ -86,7 +86,7 @@ curl_close($ch);
                                                             <td><?php echo $value->data_solicitacao; ?></td>
                                                             <td><?php echo $value->valor_solicitado; ?></td>
                                                             <td><?php echo $value->tipo_atendimento; ?></td>
-                                                            <td <?php if ($roleValid) { echo "style='color: #428F0B; font-weight:bold'"; } ?>><?php echo $value->status_solicitacao; ?></td>
+                                                            <td style='color: #428F0B; font-weight:bold'><?php echo $value->status_solicitacao; ?></td>
                                                             <td><?php echo date('d/m/Y H:i', strtotime($value->updated_at)); ?></td>
                                                         </tr>
                                                     <?php } ?>
