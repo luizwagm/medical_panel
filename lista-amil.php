@@ -1,4 +1,10 @@
-<?php define('MENU', 'lista'); ?>
+<?php define('MENU', 'lista-amil'); ?>
+<?php
+    if(! in_array('Amil', $_SESSION['payload']->modules)) {
+        echo '<script>location.href="./credenciais.php?error=token_invalido"</script>';
+        exit;
+    }        
+?>
 <?php require "includes/header.php"; ?>
 <style>
     @media print {
@@ -26,7 +32,7 @@ require 'actions/environment.php';
 
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, URL . '/v1/get-lista');
+curl_setopt($ch, CURLOPT_URL, URL . '/v1/get-lista-amil');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 $headers = array();
@@ -60,7 +66,7 @@ foreach($results as $value) {
                 </header>
                 
                 <div class="page-heading noPrint">
-                    <h3>Lista solicitações de reembolso</h3>
+                    <h3>Lista solicitações Amil</h3>
                     <button type="button" class="btn btn-primary" onclick="print();">Imprimir</button>
                 </div>
                 <div class="page-content">
@@ -77,8 +83,7 @@ foreach($results as $value) {
                                                         <th>CPF/E-mail</th>
                                                         <th>Protocolo</th>
                                                         <th>Data de solicitação</th>
-                                                        <th>Valor Solicitado</th>
-                                                        <th>Tipo de Atendimento</th>
+                                                        <th>Valor Reembolso</th>
                                                         <th>Status da Solicitação</th>
                                                         <th>Data de atualização</th>
                                                     </tr>
@@ -92,9 +97,8 @@ foreach($results as $value) {
                                                             <td><?php echo $value->nome; ?></td>
                                                             <td><?php echo $value->cpf; ?></td>
                                                             <td><?php echo $value->protocolo; ?></td>
-                                                            <td><?php echo $value->data_solicitacao; ?></td>
-                                                            <td><?php echo $value->valor_solicitado; ?></td>
-                                                            <td><?php echo $value->tipo_atendimento; ?></td>
+                                                            <td><?php echo $value->data_previsao_pagamento; ?></td>
+                                                            <td><?php echo $value->valor_reembolsado; ?></td>
                                                             <td style='color: #428F0B; font-weight:bold'><?php echo $value->status_solicitacao; ?></td>
                                                             <td><span style="display:none"><?php echo $value->updated_at; ?></span><?php echo date('d/m/Y H:i', strtotime($value->updated_at)); ?></td>
                                                         </tr>

@@ -1,4 +1,10 @@
-<?php define('MENU', 'lista'); ?>
+<?php define('MENU', 'lista-bradesco'); ?>
+<?php
+    if(! in_array('Bradesco', $_SESSION['payload']->modules)) {
+        echo '<script>location.href="./credenciais.php?error=token_invalido"</script>';
+        exit;
+    }        
+?>
 <?php require "includes/header.php"; ?>
 <style>
     @media print {
@@ -60,7 +66,7 @@ foreach($results as $value) {
                 </header>
                 
                 <div class="page-heading noPrint">
-                    <h3>Lista solicitações de reembolso</h3>
+                    <h3>Lista solicitações Bradesco</h3>
                     <button type="button" class="btn btn-primary" onclick="print();">Imprimir</button>
                 </div>
                 <div class="page-content">

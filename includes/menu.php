@@ -1,14 +1,14 @@
 <div class="sidebar-menu noPrint">
     <ul class="menu">      
-        <li class="sidebar-item  has-sub <?php if (MENU == 'lista') { echo 'active'; } ?>">
+        <li class="sidebar-item  has-sub">
             <a href="#" class='sidebar-link'>
                 <span>Listas de reembolso</span>
             </a>
         </li>
-        <?php if(in_array('Bradesco', $_SESSION['payload']->modules)) { ?><li class="sidebar-item ">
+        <?php if(in_array('Bradesco', $_SESSION['payload']->modules)) { ?><li class="sidebar-item <?php if (MENU == 'lista-bradesco') { echo 'active'; } ?>">
             <a href="./lista-bradesco.php" class='sidebar-link'><span>> Bradesco</span></a>
         </li><?php } ?>
-        <?php if(in_array('Amil', $_SESSION['payload']->modules)) { ?><li class="sidebar-item ">
+        <?php if(in_array('Amil', $_SESSION['payload']->modules)) { ?><li class="sidebar-item <?php if (MENU == 'lista-amil') { echo 'active'; } ?>">
             <a href="./lista-amil.html" class='sidebar-link'><span>> Amil</span></a>
         </li><?php } ?>
 
