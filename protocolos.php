@@ -46,8 +46,8 @@ curl_close($ch);
                                             <div class="form-group">
                                                 <label for="basicInput">Seguradora *</label>
                                                 <select id="seguradora" name="seguradora" class="form-control">
-                                                    <option value="1">Bradesco</option>
-                                                    <option value="2">Amil</option>
+                                                    <?php if(in_array('Bradesco', $_SESSION['payload']->modules)) { ?><option value="1">Bradesco</option><?php } ?>
+                                                    <?php if(in_array('Amil', $_SESSION['payload']->modules)) { ?><option value="2">Amil</option><?php } ?>
                                                 </select>
                                             </div>
                                             <div class="form-group">
