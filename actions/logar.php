@@ -44,5 +44,6 @@ if (! json_decode($result)->access_token) {
     print_r(json_decode($result)->error);
     echo '<br><br>Tente novamente, <a href="../login.php">clicando aqui.</a>';
 } else {
+    $_SESSION['payload'] = json_decode($result);
     echo '<script>location.href="../index.php"</script>';
 }

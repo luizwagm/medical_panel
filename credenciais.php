@@ -32,6 +32,8 @@ if (isset($_GET['val'])) {
     $resUpd = json_decode(base64_decode($_GET['val']));
 }
 
+print_r($_SESSION['payload']);
+
 ?>
     <body>
         <div id="app">
