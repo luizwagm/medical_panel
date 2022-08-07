@@ -32,8 +32,6 @@ if (isset($_GET['val'])) {
     $resUpd = json_decode(base64_decode($_GET['val']));
 }
 
-print_r($_SESSION['payload']);
-
 ?>
     <body>
         <div id="app">
@@ -80,8 +78,8 @@ print_r($_SESSION['payload']);
                                                     <div class="form-group">
                                                         <label for="basicInput">Seguradora *</label>
                                                         <select id="seguradora" name="seguradora" class="form-control">
-                                                            <option value="1" <?php if ($resUpd && $resUpd->seguradora_id == 1) { echo 'selected'; } ?>>Bradesco</option>
-                                                            <option value="2" <?php if ($resUpd && $resUpd->seguradora_id == 2) { echo 'selected'; } ?>>Amil</option>
+                                                            <?php if(in_array('1', $_SESSION['payload']->modules)) { ?><option value="1" <?php if ($resUpd && $resUpd->seguradora_id == 1) { echo 'selected'; } ?>>Bradesco</option><?php } ?>
+                                                            <?php if(in_array('2', $_SESSION['payload']->modules)) { ?><option value="2" <?php if ($resUpd && $resUpd->seguradora_id == 2) { echo 'selected'; } ?>>Amil</option><?php } ?>
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
