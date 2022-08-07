@@ -76,6 +76,13 @@ if (isset($_GET['val'])) {
                                                         <input type="text" class="form-control" id="numero_cartao" name="numero_cartao" placeholder="Insira o número do cartão" value="<?php if ($resUpd) { echo $resUpd->numero_cartao; }?>">
                                                     </div>
                                                     <div class="form-group">
+                                                        <label for="basicInput">Seguradora *</label>
+                                                        <select id="seguradora" name="seguradora" class="form-control">
+                                                            <option value="1" <?php if ($resUpd && $resUpd->seguradora_id == 1) { echo 'selected'; } ?>>Bradesco</option>
+                                                            <option value="2" <?php if ($resUpd && $resUpd->seguradora_id == 2) { echo 'selected'; } ?>>Amil</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <button class="btn btn-primary">Salvar</button>
                                                     </div>
                                                 </form>

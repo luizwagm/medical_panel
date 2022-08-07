@@ -13,11 +13,12 @@ $cpf = trim($_POST['cpf']);
 $senha = trim($_POST['senha']);
 $nome = trim($_POST['nome_paciente']);
 $numeroCartao = trim($_POST['numero_cartao']);
+$seguradora = trim($_POST['seguradora']);
 
 $id = trim($_POST['id']);
 $acao = trim($_POST['acao']);
 
-if (empty($cpf) || empty($senha) || empty($nome) || empty($numeroCartao)) {
+if (empty($cpf) || empty($senha) || empty($nome) || empty($numeroCartao) || empty($seguradora)) {
     echo '<script>alert("Todos os campos são obrigatórios!");</script>';
     echo '<script>location.href="../credenciais.php"</script>';
 } else {
@@ -28,7 +29,16 @@ if (empty($cpf) || empty($senha) || empty($nome) || empty($numeroCartao)) {
     curl_setopt($ch, CURLOPT_URL, URL . '/v1/credentials/' . $endPoint);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['cpf' => $cpf, 'senha' => $senha, 'nome' => $nome, 'numero_cartao' => $numeroCartao, 'id' => $id]));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(
+        [
+            'cpf' => $cpf,
+            'senha' => $senha,
+            'nome' => $nome,
+            'numero_cartao' => $numeroCartao,
+            'id' => $id,
+            'seguradora' => $seguradora
+        ]
+    ));
 
     $headers = array();
     $headers[] = 'Accept: application/json';
