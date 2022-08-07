@@ -10,7 +10,6 @@
 </footer>
 <script src="./assets/js/app.js"></script>
 <script src="./assets/js/pages/dashboard.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script>
     $('document').ready( function () {
