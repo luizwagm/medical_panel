@@ -130,7 +130,7 @@ if (isset($_GET['val'])) {
                                                                 <table class="table mb-0 tableDataJqueryOther stripe" style="font-size: 13px; text-transform: uppercase;">
                                                                     <thead class="thead-dark">
                                                                         <tr>
-                                                                            <th></th>
+                                                                            <th>Seguradora</th>
                                                                             <th>CPF/E-mail</th>
                                                                             <th>Senha</th>
                                                                             <th>Nome do paciente</th>
@@ -152,10 +152,25 @@ if (isset($_GET['val'])) {
 
                                                                                 ];
 
+                                                                                switch($value->seguradora_id) {
+                                                                                    case 1:
+                                                                                        $seguradora = 'Bradesco';
+                                                                                        break;
+                                                                                    case 2:
+                                                                                        $seguradora = 'Amil';
+                                                                                        break;
+                                                                                    default:
+                                                                                        $seguradora = '';
+                                                                                        break;
+                                                                                }
+
                                                                                 $string64 = base64_encode(json_encode($arr64));
                                                                         ?>
                                                                         <tr <?php echo $validDel ? 'style="background-color: #FCC0C0; color:#000 !important; transparent: 0.5"' : ''; ?>>
-                                                                            <td><?php echo $validDel ? '<span class="badge" style="background-color: #ae0001; font-size: 10px">Não conecta no sistema!</span>' : ''; ?></td>
+                                                                            <td>
+                                                                                <?php echo $validDel ? '<span class="badge" style="background-color: #ae0001; font-size: 10px">Não conecta no sistema!</span><br>' : ''; ?>
+                                                                                <?php echo $seguradora; ?>
+                                                                            </td>
                                                                             <td><?php echo $value->cpf; ?></td>
                                                                             <td><?php echo $value->senha; ?></td>
                                                                             <td><?php echo $value->nome; ?></td>
