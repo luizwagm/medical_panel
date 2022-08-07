@@ -21,7 +21,7 @@ if (! isset($_SESSION['token']) || empty($_SESSION['token'])) {
 </head>
 
 <?php if(isset($_SESSION['errosCredenciais']) && $_SESSION['errosCredenciais'] > 0) { ?>
-    <div class="alert alert-warning" role="alert">
+    <div class="alert alert-warning" role="alert" style="text-align:center; z-index:1000;">
         Atenção, existem <?php echo $_SESSION['errosCredenciais']; ?> credenciais inválidas.
     </div>
 <?php } ?>
