@@ -78,7 +78,6 @@ if (isset($_GET['val'])) {
                                                     <div class="form-group">
                                                         <label for="basicInput">Seguradora *</label>
                                                         <select id="seguradora" name="seguradora" class="form-control">
-                                                            <option value=""><?php echo $resUpd->seguradora_id; ?></option>
                                                             <option value="1" <?php if ($resUpd && $resUpd->seguradora_id == 1) { echo 'selected'; } ?>>Bradesco</option>
                                                             <option value="2" <?php if ($resUpd && $resUpd->seguradora_id == 2) { echo 'selected'; } ?>>Amil</option>
                                                         </select>
@@ -157,7 +156,7 @@ if (isset($_GET['val'])) {
                                                                                     'nome' =>$value->nome,
                                                                                     'numero_cartao' =>$value->numero_cartao,
                                                                                     'id' =>$value->id,
-
+                                                                                    'seguradora_id' => $value->seguradora_id
                                                                                 ];
 
                                                                                 switch($value->seguradora_id) {
