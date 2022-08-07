@@ -1,11 +1,19 @@
 <div class="sidebar-menu noPrint">
     <ul class="menu">      
-        <li class="sidebar-item <?php if (MENU == 'lista') { echo 'active'; } ?>">
-            <a href="./lista.php" class='sidebar-link'>
+        <li class="sidebar-item  has-sub <?php if (MENU == 'lista') { echo 'active'; } ?>">
+            <a href="#" class='sidebar-link'>
                 <i class="bi bi-grid-fill"></i>
-                <span>Lista</span>
+                <span>Listas de reembolso</span>
             </a>
-        </li> 
+            <ul class="submenu ">
+                <?php if(in_array('Bradesco', $_SESSION['payload']->modules)) { ?><li class="submenu-item ">
+                    <a href="./lista-bradesco.php">Bradesco</a>
+                </li><?php } ?>
+                <?php if(in_array('Amil', $_SESSION['payload']->modules)) { ?><li class="submenu-item ">
+                    <a href="./lista-amil.html">Amil</a>
+                </li><?php } ?>
+            </ul>
+        </li>
 
         <li class="sidebar-item <?php if (MENU == 'credenciais') { echo 'active'; } ?>">
             <a href="./credenciais.php" class='sidebar-link'>
