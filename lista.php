@@ -38,6 +38,15 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 $result = curl_exec($ch);
 curl_close($ch);
 
+$novoResult = [];
+$results = json_decode($result);
+foreach($results as $value) {
+    $splitT = explode(' ', $value->protocolo);
+    $nnProtocolo = str_replace('.', '', $splitT[0]);
+    
+    $novoResult[substr($nnProtocolo, 0, -2)] = $value;
+    
+}
 ?>
 
     <body>
@@ -76,7 +85,7 @@ curl_close($ch);
                                                 </thead>
                                                 <tbody>
                                                     <?php
-                                                        foreach(json_decode($result) as $value) {
+                                                        foreach($novoResult as $value) {
                                                             $roleValid = (strtotime($value->updated_at) > strtotime($value->created_at));
                                                     ?>
                                                         <tr>
@@ -87,7 +96,7 @@ curl_close($ch);
                                                             <td><?php echo $value->valor_solicitado; ?></td>
                                                             <td><?php echo $value->tipo_atendimento; ?></td>
                                                             <td style='color: #428F0B; font-weight:bold'><?php echo $value->status_solicitacao; ?></td>
-                                                            <td><?php echo date('d/m/Y H:i', strtotime($value->updated_at)); ?></td>
+                                                            <td><span style="display:none"><?php echo $value->updated_at; ?></span><?php echo date('d/m/Y H:i', strtotime($value->updated_at)); ?></td>
                                                         </tr>
                                                     <?php } ?>
                                                 </tbody>
