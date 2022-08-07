@@ -1,11 +1,11 @@
 <?php define('MENU', 'lista-bradesco'); ?>
+<?php require "includes/header.php"; ?>
 <?php
     if(! in_array('Bradesco', $_SESSION['payload']->modules)) {
         echo '<script>location.href="./credenciais.php?error=token_invalido"</script>';
         exit;
     }        
 ?>
-<?php require "includes/header.php"; ?>
 <style>
     @media print {
         .noPrint {

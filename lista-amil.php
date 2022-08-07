@@ -1,11 +1,11 @@
 <?php define('MENU', 'lista-amil'); ?>
+<?php require "includes/header.php"; ?>
 <?php
     if(! in_array('Amil', $_SESSION['payload']->modules)) {
         echo '<script>location.href="./credenciais.php?error=token_invalido"</script>';
         exit;
     }        
 ?>
-<?php require "includes/header.php"; ?>
 <style>
     @media print {
         .noPrint {
