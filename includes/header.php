@@ -19,3 +19,9 @@ if (! isset($_SESSION['token']) || empty($_SESSION['token'])) {
     <link rel="stylesheet" href="./assets/css/shared/iconly.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 </head>
+
+<?php if(isset($_SESSION['errosCredenciais']) && $_SESSION['errosCredenciais'] > 0) { ?>
+    <div class="alert alert-warning" role="alert">
+        Atenção, existem <?php echo $_SESSION['errosCredenciais']; ?> credenciais inválidas.
+    </div>
+<?php } ?>

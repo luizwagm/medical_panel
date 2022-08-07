@@ -28,6 +28,8 @@ foreach(json_decode($result) as $key => $value) {
     $cadastrosCredenciais++;
 }
 
+$_SESSION['errosCredenciais'] = $errosCredenciais;
+
 if (isset($_GET['val'])) {
     $resUpd = json_decode(base64_decode($_GET['val']));
 }
