@@ -78,8 +78,8 @@ if (isset($_GET['val'])) {
                                                     <div class="form-group">
                                                         <label for="basicInput">Seguradora *</label>
                                                         <select id="seguradora" name="seguradora" class="form-control">
-                                                            <?php if(in_array('1', $_SESSION['payload']->modules)) { ?><option value="1" <?php if ($resUpd && $resUpd->seguradora_id == 1) { echo 'selected'; } ?>>Bradesco</option><?php } ?>
-                                                            <?php if(in_array('2', $_SESSION['payload']->modules)) { ?><option value="2" <?php if ($resUpd && $resUpd->seguradora_id == 2) { echo 'selected'; } ?>>Amil</option><?php } ?>
+                                                            <?php if(in_array('Bradesco', $_SESSION['payload']->modules)) { ?><option value="1" <?php if ($resUpd && $resUpd->seguradora_id == 1) { echo 'selected'; } ?>>Bradesco</option><?php } ?>
+                                                            <?php if(in_array('Amil', $_SESSION['payload']->modules)) { ?><option value="2" <?php if ($resUpd && $resUpd->seguradora_id == 2) { echo 'selected'; } ?>>Amil</option><?php } ?>
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
