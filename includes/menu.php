@@ -6,10 +6,10 @@
             </a>
         </li>
         <?php if(in_array('Bradesco', $_SESSION['payload']->modules)) { ?><li class="sidebar-item ">
-            <a href="./lista-bradesco.php" class='sidebar-link'><span>Bradesco</span></a>
+            <a href="./lista-bradesco.php" class='sidebar-link'><span>> Bradesco</span></a>
         </li><?php } ?>
         <?php if(in_array('Amil', $_SESSION['payload']->modules)) { ?><li class="sidebar-item ">
-            <a href="./lista-amil.html" class='sidebar-link'><span>Amil</span></a>
+            <a href="./lista-amil.html" class='sidebar-link'><span>> Amil</span></a>
         </li><?php } ?>
 
         <li class="sidebar-item <?php if (MENU == 'credenciais') { echo 'active'; } ?>">
