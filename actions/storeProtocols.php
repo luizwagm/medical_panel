@@ -10,14 +10,20 @@ if (! isset($_SESSION['token']) || empty($_SESSION['token'])) {
 require 'environment.php';
 
 $protocolo = trim($_POST['protocolo']);
+$seguradora = trim($_POST['seguradora']);
 
-if (! empty($protocolo)) {
+if (! empty($protocolo) || empty($seguradora)) {
     $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, URL . '/v1/protocol/store');
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['protocolo' => $protocolo]));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(
+        [
+            'protocolo' => $protocolo,
+            'seguradora' => $seguradora
+        ]
+    ));
 
     $headers = array();
     $headers[] = 'Accept: application/json';

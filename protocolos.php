@@ -40,8 +40,15 @@ curl_close($ch);
                                     <div class="col-md-4">
                                         <form action="./actions/storeProtocols.php" method="post">
                                             <div class="form-group">
-                                                <label for="basicInput">Protocolo</label>
+                                                <label for="basicInput">Protocolo *</label>
                                                 <input type="text" class="form-control" id="protocolo" name="protocolo" placeholder="Insira o protocolo">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="basicInput">Seguradora *</label>
+                                                <select id="seguradora" name="seguradora" class="form-control">
+                                                    <option value="1">Bradesco</option>
+                                                    <option value="2">Amil</option>
+                                                </select>
                                             </div>
                                             <div class="form-group">
                                                 <button class="btn btn-primary">Salvar</button>
@@ -58,6 +65,7 @@ curl_close($ch);
                                                                 <table class="table mb-0 tableDataJqueryOther stripe" style="font-size: 13px; text-transform: uppercase;">
                                                                     <thead class="thead-dark">
                                                                         <tr>
+                                                                            <th>Seguradora</th>
                                                                             <th>Protocolo</th>
                                                                             <th></th>
                                                                         </tr>
@@ -65,8 +73,21 @@ curl_close($ch);
                                                                     <tbody>
                                                                         <?php
                                                                             foreach(json_decode($result) as $value) {
+
+                                                                                switch($value->seguradora_id) {
+                                                                                    case 1:
+                                                                                        $seguradora = 'Bradesco';
+                                                                                        break;
+                                                                                    case 2:
+                                                                                        $seguradora = 'Amil';
+                                                                                        break;
+                                                                                    default:
+                                                                                        $seguradora = '';
+                                                                                        break;
+                                                                                }
                                                                         ?>
                                                                         <tr>
+                                                                            <td><?php echo $seguradora; ?></td>
                                                                             <td><?php echo $value->protocolo; ?></td>
                                                                             <td><a href="./actions/deletarProtocolo.php?id=<?php echo $value->id; ?>" class="btn btn-danger">Remover</a></td>
                                                                         </tr>
