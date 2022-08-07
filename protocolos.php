@@ -110,7 +110,5 @@ curl_close($ch);
                 <?php require "includes/footer.php"; ?>
             </div>
         </div>
-        <script src="./dist/assets/js/app.js"></script>
-        <script src="./dist/assets/js/pages/dashboard.js"></script>
     </body>
 </html>
