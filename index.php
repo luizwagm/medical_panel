@@ -1,4 +1,4 @@
-<?php header("Location: lista.php"); ?>
+<?php header("Location: credenciais.php"); ?>
 <?php require "includes/header.php"; ?>
     <body>
         <div id="app">
